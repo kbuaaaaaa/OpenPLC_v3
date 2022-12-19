@@ -384,7 +384,7 @@ int createUDPServer(int port)
 		exit(1);
 	}
 
-	printf("Socket %d binded successfully on port %d!\n", socket_fd, port);
+	// printf("Socket %d binded successfully on port %d!\n", socket_fd, port);
 
 	return socket_fd;
 }
@@ -661,11 +661,7 @@ int main()
 	while(1)
 	{
 		pthread_mutex_lock(&bufferLock);
-		// printf("Station 1\nPressure: %d\tTank: %d\t\tPump: %d\t\tValve: %d\n", stations_data[0].analogIn[0], stations_data[0].analogIn[1], stations_data[0].digitalOut[0], stations_data[0].digitalOut[1]);
-		// printf("Station 2\nPressure: %d\t\t\tPump: %d\t\tValve: %d\n", stations_data[1].analogIn[0], stations_data[1].digitalOut[0], stations_data[1].digitalOut[1]);
-		// printf("Station 3\nPressure: %d\t\t\tPump: %d\t\tValve: %d\n", stations_data[2].analogIn[0], stations_data[2].digitalOut[0], stations_data[2].digitalOut[1]);
-		// printf("Station 4\nPressure: %d\t\t\tPump: %d\t\tValve: %d\n", stations_data[3].analogIn[0], stations_data[3].digitalOut[0], stations_data[3].digitalOut[1]);
-		// printf("Station 5\nPressure: %d\tTank: %d\t\tPump: %d\t\tValve: %d\n\n", stations_data[4].analogIn[0], stations_data[4].analogIn[1], stations_data[4].digitalOut[0], stations_data[4].digitalOut[1]);
+		printf("High: %d\tLow: %d\t\tValve In: %d\t\tValve Out: %d\n", stations_data[0].digitalIn[0], stations_data[0].digitalIn[1], stations_data[0].digitalOut[0], stations_data[0].digitalOut[1]);
 		pthread_mutex_unlock(&bufferLock);
 
 		sleep_ms(3000);
